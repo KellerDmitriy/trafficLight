@@ -15,58 +15,45 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var conditionButton: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getCornerRadius(for: [redView, yellowView, greenView])
+        redView.layer.cornerRadius = redView.frame.width / 2
+        yellowView.layer.cornerRadius = redView.frame.width / 2
+        greenView.layer.cornerRadius = redView.frame.width / 2
         conditionButton.layer.cornerRadius = 10
     }
     
-    private func getCornerRadius(
-        for colorsView: [UIView]) {
-            if redView.frame.width == yellowView.frame.width &&
-                yellowView.frame.width == greenView.frame.width  {
-                let radius: CGFloat = redView.frame.width / 2
-                for colorView in colorsView {
-                    colorView.layer.cornerRadius = radius
-                }
-            }
-        }
-    
-    func switchLight(for color: UIView) {
-        color.alpha = 1
-        if color.alpha == 1 {
-            color.alpha = 0.3
-        }
-    }
     
     @IBAction private func changeColorLightButton() {
-        
-        
-        
-        //        if color.alpha < 1 {
-        //            redView.alpha = 1
-        //        }
-        //        if redView.alpha == 1 {
-        //            redView.alpha = 0.3
-        //            yellowView.alpha = 1
-        //        }
-        //        if yellowView.alpha == 1 {
-        //            yellowView.alpha = 0.3
-        //            greenView.alpha = 1
-        //        }
-        //        if greenView.alpha == 1 {
-        //            greenView.alpha = 0.3
-        //            redView.alpha = 1
-        //        }
-        
-        switchLight(for: redView)
-        switchLight(for: yellowView)
-        switchLight(for: greenView)
         conditionButton.setTitle("NEXT", for: .normal)
+        
+        enum ColorLight {
+            case redLight
+            case yellowLight
+            case greenLight
+        }
+        var colorLight: ColorLight = .redLight
+        
+        func change(colorLight: ColorLight) {
+            switch  colorLight {
+            case .redLight:
+                redView.alpha = 1
+            case .yellowLight:
+                yellowView.alpha = 1
+                greenView.alpha = 1
+            case .greenLight:
+                greenView.alpha = 0.3
+                redView.alpha = 1
+            }
+        }
+        
+        change(colorLight: colorLight)
+        colorLight = .yellowLight
+        change(colorLight: colorLight)
+        colorLight = .greenLight
         
     }
 }
-
 
 
