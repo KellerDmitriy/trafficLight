@@ -15,47 +15,59 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var conditionButton: UIButton!
     
-    enum ColorLight {
-        case redLight
-        case yellowLight
-        case greenLight
-    }
-    
-    var colorLight: ColorLight = .redLight
+    private var colorLight: ColorLight = .red
+    private let turnerOn: CGFloat = 1
+    private let turnedOff: CGFloat = 0.2
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        conditionButton.layer.cornerRadius = 10
+        UIView.animate(withDuration: 2.5) {
+            self.redView.center = self.view.center
+            self.redView.alpha = 0.2
+            self.yellowView.center = self.view.center
+            self.yellowView.alpha = 0.2
+            self.greenView.center = self.view.center
+            self.greenView.alpha = 0.2
+        }
+ 
+    }
+    
+    override func viewWillLayoutSubviews() {
         redView.layer.cornerRadius = redView.frame.width / 2
         yellowView.layer.cornerRadius = redView.frame.width / 2
         greenView.layer.cornerRadius = redView.frame.width / 2
-        conditionButton.layer.cornerRadius = 10
     }
-
+    
     @IBAction private func changeColorLightButton() {
-        conditionButton.setTitle("NEXT", for: .normal)
-        
-        func change(colorLight: ColorLight) {
-            switch  colorLight {
-            case .redLight:
-                redView.alpha = 1
-                yellowView.alpha = 0.3
-                greenView.alpha = 0.3
-            case .yellowLight:
-                redView.alpha = 0.3
-                yellowView.alpha = 1
-                greenView.alpha = 0.3
-            case .greenLight:
-                redView.alpha = 0.3
-                yellowView.alpha = 0.3
-                greenView.alpha = 1
-            }
+        if conditionButton.currentTitle == "START" {
+            conditionButton.setTitle("NEXT", for: .normal)
         }
         
-        change(colorLight: colorLight)
-        colorLight = .yellowLight
-        
-        
+        switch  colorLight {
+        case .red:
+            redView.alpha = turnerOn
+            colorLight = .yellow
+            greenView.alpha = turnedOff
+        case .yellow:
+            redView.alpha = turnedOff
+            yellowView.alpha = turnerOn
+            colorLight = .green
+        case .green:
+            yellowView.alpha = turnedOff
+            greenView.alpha = turnerOn
+            colorLight = .red
+        }
     }
 }
+
+extension ViewController {
+    private enum ColorLight {
+        case red
+        case yellow
+        case green
+    }
+}
+
 
 
