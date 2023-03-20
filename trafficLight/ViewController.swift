@@ -15,14 +15,13 @@ final class ViewController: UIViewController {
     
     @IBOutlet private weak var conditionButton: UIButton!
     
-    var colorLight: ColorLight = .redLight
     enum ColorLight {
         case redLight
         case yellowLight
         case greenLight
     }
     
-    
+    var colorLight: ColorLight = .redLight
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +30,7 @@ final class ViewController: UIViewController {
         greenView.layer.cornerRadius = redView.frame.width / 2
         conditionButton.layer.cornerRadius = 10
     }
-    
-    
+
     @IBAction private func changeColorLightButton() {
         conditionButton.setTitle("NEXT", for: .normal)
         
@@ -40,10 +38,14 @@ final class ViewController: UIViewController {
             switch  colorLight {
             case .redLight:
                 redView.alpha = 1
+                yellowView.alpha = 0.3
+                greenView.alpha = 0.3
             case .yellowLight:
                 redView.alpha = 0.3
                 yellowView.alpha = 1
+                greenView.alpha = 0.3
             case .greenLight:
+                redView.alpha = 0.3
                 yellowView.alpha = 0.3
                 greenView.alpha = 1
             }
@@ -51,9 +53,7 @@ final class ViewController: UIViewController {
         
         change(colorLight: colorLight)
         colorLight = .yellowLight
-        change(colorLight: colorLight)
-        colorLight = .greenLight
-        change(colorLight: colorLight)
+        
         
     }
 }

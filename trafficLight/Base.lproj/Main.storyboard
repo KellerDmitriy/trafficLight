@@ -18,38 +18,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-sh-Roq">
-                                <rect key="frame" x="146.66666666666666" y="50" width="100" height="316"/>
+                                <rect key="frame" x="112.66666666666667" y="69.666666666666686" width="167.66666666666663" height="518.33333333333326"/>
                                 <subviews>
                                     <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-o4-0aT">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="167.66666666666666" height="167.66666666666666"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="dml-kn-F81"/>
-                                            <constraint firstAttribute="height" constant="100" id="jgM-u9-o8b"/>
+                                            <constraint firstAttribute="width" secondItem="rN8-o4-0aT" secondAttribute="height" multiplier="1:1" id="r1t-2t-Isy"/>
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-Pd-KJu">
-                                        <rect key="frame" x="0.0" y="108" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="175.66666666666669" width="167.66666666666666" height="167.33333333333331"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="7Dh-Qx-ggi"/>
-                                            <constraint firstAttribute="width" constant="100" id="VEc-gN-hQn"/>
+                                            <constraint firstAttribute="width" secondItem="PuG-Pd-KJu" secondAttribute="height" multiplier="1:1" id="3oD-ps-mjH"/>
                                         </constraints>
                                     </view>
                                     <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6gc-gR-ci0">
-                                        <rect key="frame" x="0.0" y="216" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="351" width="167.66666666666666" height="167.33333333333337"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="2QQ-16-nA4"/>
-                                            <constraint firstAttribute="height" constant="100" id="JNA-B6-aeR"/>
+                                            <constraint firstAttribute="width" secondItem="6gc-gR-ci0" secondAttribute="height" multiplier="1:1" id="dqH-Uj-PRc"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lQS-EE-rba">
-                                <rect key="frame" x="71.666666666666686" y="714" width="250" height="30"/>
+                                <rect key="frame" x="71.666666666666686" y="738" width="250" height="40"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Pn2-FI-hgK"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="ZKM-9e-hqI"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -65,9 +63,10 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lQS-EE-rba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3J9-SD-Fg1"/>
-                            <constraint firstItem="wS9-sh-Roq" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="50" id="5Pf-48-Fu3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lQS-EE-rba" secondAttribute="bottom" constant="74" id="cjs-9A-FkN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lQS-EE-rba" secondAttribute="bottom" constant="40" id="Xg7-DK-zfw"/>
                             <constraint firstItem="wS9-sh-Roq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fDe-q7-Dy9"/>
+                            <constraint firstItem="lQS-EE-rba" firstAttribute="top" secondItem="6gc-gR-ci0" secondAttribute="bottom" constant="150" id="l7I-4Q-5oM"/>
+                            <constraint firstItem="wS9-sh-Roq" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="3:4" id="oMp-tB-MET"/>
                         </constraints>
                     </view>
                     <connections>
