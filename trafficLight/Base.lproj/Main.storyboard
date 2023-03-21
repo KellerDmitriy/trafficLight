@@ -21,15 +21,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wS9-sh-Roq">
                                 <rect key="frame" x="105" y="40" width="110" height="346"/>
                                 <subviews>
-                                    <view alpha="0.80000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-o4-0aT">
+                                    <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rN8-o4-0aT">
                                         <rect key="frame" x="0.0" y="0.0" width="110" height="110"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
-                                    <view alpha="0.80000000000000004" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-Pd-KJu">
+                                    <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="PuG-Pd-KJu">
                                         <rect key="frame" x="0.0" y="118" width="110" height="110"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </view>
-                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6gc-gR-ci0">
+                                    <view alpha="0.29999999999999999" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="6gc-gR-ci0">
                                         <rect key="frame" x="0.0" y="236" width="110" height="110"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     </view>
